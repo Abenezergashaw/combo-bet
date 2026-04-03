@@ -191,10 +191,10 @@ const handleSelection = (data, market, marketName) => {
 <style scoped>
 @keyframes selectFlash {
   0% {
-    background-color: #49215d;
+    background-color: #2a2a2a;
   }
   50% {
-    background-color: #49215d;
+    background-color: #db7c2e;
   } /* middle color */
   100% {
     background-color: #5b5b5b;

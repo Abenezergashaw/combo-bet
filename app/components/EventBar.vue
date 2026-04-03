@@ -13,14 +13,14 @@ const router = useRouter();
     <UIcon
       @click="router.back()"
       name="bxs:chevron-left"
-      class="w-6 h-6 bg-[#49215D]"
+      class="w-6 h-6 bg-[#2A2A2A]"
     />
 
     <div class="border-r h-10 border-r-gray-300"></div>
 
     <ThreeDotsBlack class="text-black" />
     <div class="font-semibold">{{ eventInfo?.SportName.International }}</div>
-    <div class="font-semibold text-[#49215D]">
+    <div class="font-semibold text-[#2A2A2A]">
       <span
         >{{ eventInfo?.CategoryName.International }} -
         {{ eventInfo?.TournamentName.International }}

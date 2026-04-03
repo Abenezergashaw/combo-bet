@@ -31,7 +31,7 @@ function formatDate(iso) {
     style="top: 40px"
   >
     <div
-      class="h-10 bg-[#49215D] text-white flex justify-between items-center px-2"
+      class="h-10 bg-[#2A2A2A] text-white flex justify-between items-center px-2"
     >
       <span>Printed Ticket</span>
       <UIcon

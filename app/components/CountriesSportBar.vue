@@ -6,7 +6,7 @@ defineProps({
 
 <template>
   <div
-    class="h-8 bg-[#49215D] text-white flex justify-between px-2 items-center text-xs"
+    class="h-8 bg-[#2A2A2A] text-white flex justify-between px-2 items-center text-xs"
   >
     <div class="flex items-center gap-2 font-bold">
       <div class="w-1.25 h-1.25 rounded-full bg-white"></div>

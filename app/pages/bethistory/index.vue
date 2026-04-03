@@ -164,7 +164,7 @@ onMounted(async () => {
 <template>
   <div class="w-full">
     <div
-      class="h-8 uppercase bg-[#49215D] text-white flex justify-center items-center"
+      class="h-8 uppercase bg-[#2A2A2A] text-white flex justify-center items-center"
     >
       bet list
     </div>
@@ -318,7 +318,7 @@ onMounted(async () => {
 
       <div class="hidden md:block">
         <div
-          class="grid bg-[#49215D] text-white items-center w-full p-2 font-semibold"
+          class="grid bg-[#2A2A2A] text-white items-center w-full p-2 font-semibold"
           style="grid-template-columns: 24% 10% 8% 8% 6% 6% 8% 10% 10% 10%"
         >
           <div>Date and ID</div>
@@ -425,7 +425,7 @@ onMounted(async () => {
               style="grid-template-columns: 20% 25% 10% 35% 5% 5%"
             >
               <div>
-                <div class="text-[#49215D]">
+                <div class="text-[#2A2A2A]">
                   {{ convertToEthiopianTime(t.start_time) }}
                 </div>
                 <div class="text-[#2b2b2b] opacity-75">

@@ -287,7 +287,7 @@ watch(
 <template>
   <div class="w-full max-w-4xl mx-auto">
     <div
-      class="h-8 uppercase bg-[#49215D] text-white flex justify-center items-center"
+      class="h-8 uppercase bg-[#2A2A2A] text-white flex justify-center items-center"
     >
       admin
     </div>
@@ -299,7 +299,7 @@ watch(
         :key="tab.value"
         @click="selectTab(tab.value)"
         class="flex-1 px-4 py-1 cursor-pointer"
-        :class="activeTab === tab.value ? 'border-b-2 border-[#49215D]' : ''"
+        :class="activeTab === tab.value ? 'border-b-2 border-[#DB7C2E]' : ''"
       >
         {{ tab.label }}
       </button>
@@ -309,7 +309,7 @@ watch(
       <div class="flex justify-center px-2 my-3 items-center cursor-pointer">
         <div
           @click="createModal = true"
-          class="p-2 bg-[#49215D] text-white w-full flex justify-center cursor-pointer"
+          class="p-2 bg-[#DB7C2E] text-white w-full flex justify-center cursor-pointer"
         >
           Create new user
         </div>

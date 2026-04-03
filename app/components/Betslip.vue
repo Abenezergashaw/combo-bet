@@ -35,7 +35,7 @@ const quickStakes = [20, 50, 1000, 500];
 
 <template>
   <div
-    class="h-10 md:h-7 bg-[#49215D] text-white flex justify-between items-center px-2 text-xs border-t border-red-500 md:border-0"
+    class="h-10 md:h-7 bg-[#2A2A2A] text-white flex justify-between items-center px-2 text-xs border-t border-red-500 md:border-0"
   >
     <div
       class="font-semibold flex items-center justify-between relative w-full"
@@ -83,7 +83,7 @@ const quickStakes = [20, 50, 1000, 500];
       </div>
       <div
         @click="continueBet()"
-        class="bg-[#49215D] text-white w-30 py-1 font-semibold rounded-sm border border-gray-200 flex justify-center items-center uppercase cursor-pointer"
+        class="bg-[#2A2A2A] text-white w-30 py-1 font-semibold rounded-sm border border-gray-200 flex justify-center items-center uppercase cursor-pointer"
       >
         Continue
       </div>
@@ -123,7 +123,7 @@ const quickStakes = [20, 50, 1000, 500];
       <!-- Bottom: 80% width -->
       <div
         @click="continueBet()"
-        class="w-full h-8 bg-[#49215D] text-white font-semibold rounded-sm border border-gray-200 flex justify-center items-center uppercase cursor-pointer"
+        class="w-full h-8 bg-[#2A2A2A] text-white font-semibold rounded-sm border border-gray-200 flex justify-center items-center uppercase cursor-pointer"
       >
         Continue
       </div>

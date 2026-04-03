@@ -9,7 +9,7 @@ const sorted = computed(() => {
 
 <template>
   <div
-    class="h-7 bg-[#49215D] text-white px-4 font-bold flex items-center text-[13px]"
+    class="h-7 bg-[#2A2A2A] text-white px-4 font-bold flex items-center text-[13px]"
   >
     Top Leagues
   </div>
@@ -29,7 +29,7 @@ const sorted = computed(() => {
   </div>
 
   <div
-    class="h-7 bg-[#49215D] text-white px-4 font-bold flex items-center text-[13px]"
+    class="h-7 bg-[#2A2A2A] text-white px-4 font-bold flex items-center text-[13px]"
   >
     Sports
   </div>

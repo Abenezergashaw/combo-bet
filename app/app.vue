@@ -7,7 +7,7 @@ useHead({
   },
 });
 
-const title = "Light Bet";
+const title = "Combo Bet";
 const description =
   "An online gaming for football betting and other virtual games.";
 

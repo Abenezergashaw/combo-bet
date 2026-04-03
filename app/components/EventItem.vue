@@ -460,7 +460,7 @@ const handleSelection = (field, market) => {
           class="px-4 h-10 md:h-8 flex items-center justify-center cursor-pointer whitespace-nowrap border-r border-b border-gray-400 flex-none md:w-full"
           :class="
             activeTabIndex === index
-              ? 'bg-[#49215D] text-white'
+              ? 'bg-[#2A2A2A] text-white'
               : 'bg-[#E6E6E6] text-black'
           "
         >
@@ -534,10 +534,11 @@ const handleSelection = (field, market) => {
 
 @keyframes selectFlash {
   0% {
-    background-color: #49215d;
+    background-color: #2a2a2a;
   }
+  25%,
   50% {
-    background-color: #49215d;
+    background-color: #db7c2e;
   } /* middle color */
   100% {
     background-color: #5b5b5b;

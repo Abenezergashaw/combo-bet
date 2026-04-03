@@ -31,7 +31,7 @@ const active = ref("All");
       @click="active = m"
       class="px-4 flex items-center cursor-pointer whitespace-nowrap border-r border-r-gray-400"
       :class="
-        active === m ? 'bg-[#49215D] text-white' : 'bg-[#E6E6E6] text-black'
+        active === m ? 'bg-[#2A2A2A] text-white' : 'bg-[#E6E6E6] text-black'
       "
     >
       {{ m }}

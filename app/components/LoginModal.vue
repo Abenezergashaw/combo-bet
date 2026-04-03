@@ -41,7 +41,7 @@ const submitForm = () => {
       class="fixed inset-0 z-50 flex items-center justify-center bg-black/40 text-xs"
     >
       <div
-        class="relative w-[90%] md:max-w-md rounded-md bg-[#49215D] text-white p-4 font-sans"
+        class="relative w-[90%] md:max-w-md rounded-md bg-[#2A2A2A] text-white p-4 font-sans"
       >
         <!-- Close -->
         <button
@@ -93,9 +93,9 @@ const submitForm = () => {
             type="submit"
             class="mt-2 w-full rounded py-2 text-sm font-bold"
             :class="
-              isFormValid
-                ? 'bg-white text-black cursor-pointer'
-                : 'bg-[#512666] opacity-95 cursor-not-allowed'
+              !isFormValid
+                ? 'bg-gray-400 text-black cursor-pointer'
+                : 'bg-[#DB7C2E] opacity-95 cursor-not-allowed'
             "
           >
             LOGIN

@@ -62,7 +62,7 @@ const handleLogin = () => {
 
 <template>
   <div
-    class="fixed top-0 left-0 right-0 z-40 p-1 bg-[#49215D] border-b border-gray-100 h-10"
+    class="fixed top-0 left-0 right-0 z-40 p-1 bg-[#2A2A2A] border-b border-gray-100 h-10"
   >
     <!-- Mobile  -->
     <div

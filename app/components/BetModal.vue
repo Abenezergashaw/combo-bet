@@ -56,7 +56,7 @@ const quickStakes = [20, 50, 1000, 500];
   >
     <!-- Header -->
     <div
-      class="h-10 bg-[#49215D] text-white flex justify-between items-center px-2 text-xs border-t border-red-500"
+      class="h-10 bg-[#2A2A2A] text-white flex justify-between items-center px-2 text-xs border-t border-red-500"
     >
       <span class="font-semibold relative">
         Betslip
@@ -222,7 +222,7 @@ const quickStakes = [20, 50, 1000, 500];
             :class="useBonusState ? 'bg-green-100' : 'bg-gray-100'"
           >
             <div
-              class="h-6 w-6 rounded-full bg-[#49215D] transform transition-transform duration-200 ease-in-out"
+              class="h-6 w-6 rounded-full bg-[#DB7C2E] transform transition-transform duration-200 ease-in-out"
               :class="useBonusState ? 'translate-x-6' : 'translate-x-0'"
             ></div>
           </div>
