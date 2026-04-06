@@ -315,69 +315,47 @@ export function useTicket() {
     clearInterval(placingBetTimer);
   };
 
-  // const getPrintTicket = async (id) => {
-  //   const { printModal, toggleModal } = useModal();
-  //   const { url } = useUrl();
-
-  //   toggleModal("print");
-
-  //   // Fix: Use triple equals for comparison
-  //   if (printModal.value === true) {
-  //     const response = await axios.get(`${url}/api/get-ticket?ticketId=${id}`);
-
-  //     if (response?.data?.error) return;
-  //     ticketDisplay.value = response.data;
-
-  //     // Create the window
-  //     const printWindow = window.open("", "_blank", "width=800,height=600");
-  //     printWindow.document.open();
-  //     printWindow.document.write(response.data);
-  //     printWindow.document.close();
-
-  //     // SOLUTION: Wait for all assets (images/styles) to load
-  //     printWindow.onload = () => {
-  //       // Small timeout to ensure the browser has rendered the layout
-  //       setTimeout(() => {
-  //         printWindow.focus();
-  //         printWindow.print();
-  //         printWindow.close();
-  //         toggleModal("print");
-  //       }, 500);
-  //     };
-  //   }
-  // };
-
   const getPrintTicket = async (id) => {
+    const { printModal, toggleModal } = useModal();
     const { url } = useUrl();
 
-    // 1. Fetch the data first
-    const response = await axios.get(`${url}/api/get-ticket?ticketId=${id}`);
-    if (response?.data?.error) return;
+    toggleModal("print");
 
-    // 2. Create a hidden iframe
-    const iframe = document.createElement("iframe");
-    iframe.style.display = "none";
-    document.body.appendChild(iframe);
+    // Fix: Use triple equals for comparison
+    if (printModal.value === true) {
+      const response = await axios.get(`${url}/api/get-ticket?ticketId=${id}`);
 
-    // 3. Inject the content
-    const iframeDoc = iframe.contentWindow.document;
-    iframeDoc.open();
-    iframeDoc.write(response.data);
-    iframeDoc.close();
+      if (response?.data?.error) return;
+      ticketDisplay.value = response.data;
 
-    // 4. Wait for it to load and print
-    iframe.onload = () => {
-      // Give mobile browsers a moment to render CSS
-      setTimeout(() => {
-        iframe.contentWindow.focus();
-        iframe.contentWindow.print();
+      // Create the window
+      const printWindow = window.open("", "_blank", "width=800,height=600");
+      printWindow.document.open();
+      printWindow.document.write(response.data);
+      printWindow.document.close();
 
-        // Cleanup: Remove iframe after print dialog closes
+      // SOLUTION: Wait for all assets (images/styles) to load
+      printWindow.onload = () => {
+        // Small timeout to ensure the browser has rendered the layout
         setTimeout(() => {
-          document.body.removeChild(iframe);
-        }, 1000);
-      }, 500);
-    };
+          printWindow.focus();
+          printWindow.print();
+          printWindow.close();
+          toggleModal("print");
+        }, 500);
+      };
+    }
+  };
+
+  const getPrintTicket2 = async (id) => {
+    const { printModal, toggleModal } = useModal();
+    const { url } = useUrl();
+
+    const response = await axios.get(`${url}/api/get-ticket?ticketId=${id}`);
+
+    if (response?.data?.error) return;
+    toggleModal("print");
+    ticketDisplay.value = response.data;
   };
 
   return {
@@ -396,6 +374,7 @@ export function useTicket() {
     repeatBet,
     continueBet,
     getPrintTicket,
+    getPrintTicket2,
     loadCashierTicket,
     ticket,
     totalBets,
