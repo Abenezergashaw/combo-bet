@@ -35,6 +35,10 @@ const TWO_LOST_RULES = [
           class="text-2xl md:text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase italic"
         >
           Lost by a <span class="text-[#DB7C2E]">One or Two matches?</span>
+          <br />
+          <span class="tracking-wider"
+            >ቲኬትዎ በ1 ወይም 2 ጨዋታዎች የወደቀ ነው? አይዞዎት አለንልዎት።</span
+          >
         </h1>
         <p
           class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light"
@@ -47,19 +51,21 @@ const TWO_LOST_RULES = [
       </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-6 pb-24">
+    <main class="max-w-6xl mx-auto px-6 pb-12">
       <div class="grid lg:grid-cols-2 gap-10">
         <section
           class="group bg-[#1F1F1F] rounded-2xl overflow-hidden border border-[#8E213A]/30 shadow-2xl transition-all hover:border-[#8E213A]"
         >
-          <div class="bg-[#8E213A] p-6 text-center">
+          <div class="bg-[#8E213A] p-6 text-center space-y-1">
             <h2
-              class="text-2xl md:text-3xl font-black tracking-widest uppercase italic"
+              class="text-xl md:text-3xl font-black tracking-widest uppercase italic"
             >
-              1 Leg Missed
+              1 Leg Missed <br />
+              በ1 የወደቀ ቲኬት
             </h2>
             <p class="text-sm opacity-80 uppercase tracking-tighter">
-              Maximum Redemption
+              Maximum Return <br />
+              ከፍተኛ ተመላሽ
             </p>
           </div>
 
@@ -84,7 +90,7 @@ const TWO_LOST_RULES = [
                   >Refund</span
                 >
                 <span class="text-2xl font-black text-[#DB7C2E]"
-                  >{{ rule.percent }}%</span
+                  >{{ rule.percent * 100 }}%</span
                 >
               </div>
             </div>
@@ -94,18 +100,16 @@ const TWO_LOST_RULES = [
         <section
           class="group bg-[#1F1F1F] rounded-2xl overflow-hidden border border-gray-800 shadow-2xl transition-all hover:border-[#DB7C2E]"
         >
-          <div
-            class="bg-gradient-to-r from-[#2A2A2A] to-[#1F1F1F] p-6 text-center border-b border-gray-800"
-          >
+          <div class="bg-[#8E213A] p-6 text-center space-y-1">
             <h2
-              class="text-2xl md:text-3xl font-black tracking-widest uppercase italic text-gray-200"
+              class="text-xl md:text-3xl font-black tracking-widest uppercase italic"
             >
-              2 Legs Missed
+              2 Leg Missed <br />
+              በ2 የወደቀ ቲኬት
             </h2>
-            <p
-              class="text-sm text-[#DB7C2E] uppercase tracking-tighter font-bold"
-            >
-              Double Trouble Cover
+            <p class="text-sm opacity-80 uppercase tracking-tighter">
+              Maximum Return <br />
+              ከፍተኛ ተመላሽ
             </p>
           </div>
 
@@ -117,7 +121,7 @@ const TWO_LOST_RULES = [
             >
               <div>
                 <span class="text-xs text-gray-500 block uppercase font-bold"
-                  >Odds Range</span
+                  >Odds Range | ቀሪ ኦድ</span
                 >
                 <span class="text-lg font-mono text-gray-200">
                   {{ rule.min
@@ -126,11 +130,11 @@ const TWO_LOST_RULES = [
               </div>
               <div class="text-right">
                 <span
-                  class="text-xs text-gray-400 block uppercase font-bold text-right"
-                  >Refund</span
+                  class="text-xs text-[#DB7C2E] block uppercase font-bold text-right"
+                  >Refund | ተመላሽ</span
                 >
-                <span class="text-2xl font-black text-white"
-                  >{{ rule.percent }}%</span
+                <span class="text-2xl font-black text-[#DB7C2E]"
+                  >{{ rule.percent * 100 }}%</span
                 >
               </div>
             </div>
@@ -142,13 +146,11 @@ const TWO_LOST_RULES = [
         class="mt-16 text-center p-8 bg-[#1F1F1F] rounded-xl border-t-4 border-[#8E213A]"
       >
         <h3 class="text-[#DB7C2E] font-bold uppercase tracking-widest mb-4">
-          Terms & Calculation
+          ህጎና ደንቦች
         </h3>
         <p class="text-sm text-gray-500 max-w-3xl mx-auto leading-relaxed">
-          Refunds are calculated based on the total ticket odds divided by the
-          odds of the losing selections. If the resulting odds fall within the
-          brackets above, your stake is multiplied by the percentage and
-          credited back. Bets must be fully settled to qualify.
+          በተመላሽ ገንዝብ ስሌት ላይ የሚያገለግሉት ያልውድቁ ጨዋታዎች ኦዶች ብቻ ናቸው። ዝቅተኛ መነሻ ኦድ ከ20 በላይ
+          ነው።
         </p>
       </footer>
     </main>
