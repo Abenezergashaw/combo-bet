@@ -7,7 +7,7 @@ useHead({
   },
 });
 
-const title = "Combo Bet";
+const title = "Combo Bet - Ethiopia";
 const description =
   "An online gaming for football betting and other virtual games.";
 
