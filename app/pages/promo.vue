@@ -1,0 +1,164 @@
+<script setup>
+const ONE_LOST_RULES = [
+  { min: 20, max: 44, percent: 1.0 },
+  { min: 45, max: 89, percent: 3.0 },
+  { min: 90, max: 144, percent: 6.0 },
+  { min: 145, max: 199, percent: 9.0 },
+  { min: 200, max: 499, percent: 12.0 },
+  { min: 500, max: 999, percent: 18.0 },
+  { min: 1000, max: 1799, percent: 31.5 },
+  { min: 1800, max: Infinity, percent: 100.0 },
+];
+
+const TWO_LOST_RULES = [
+  { min: 20, max: 44, percent: 1.0 },
+  { min: 45, max: 59, percent: 2.5 },
+  { min: 60, max: 89, percent: 3.5 },
+  { min: 90, max: 449, percent: 6.0 },
+  { min: 450, max: 999, percent: 12.0 },
+  { min: 1000, max: 1799, percent: 21.0 },
+  { min: 1800, max: Infinity, percent: 50.0 },
+];
+</script>
+
+<template>
+  <div
+    class="min-h-screen bg-[#2A2A2A] text-white font-sans selection:bg-[#DB7C2E]"
+  >
+    <header class="relative py-20 px-6 text-center overflow-hidden">
+      <div
+        class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-64 bg-[#8E213A] opacity-20 blur-[120px] rounded-full"
+      ></div>
+
+      <div class="relative z-10">
+        <h1
+          class="text-2xl md:text-5xl md:text-7xl font-black tracking-tighter mb-4 uppercase italic"
+        >
+          Lost by a <span class="text-[#DB7C2E]">One or Two matches?</span>
+        </h1>
+        <p
+          class="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto font-light"
+        >
+          Don't let one or two bad results ruin your parlay. We’ve built a
+          massive
+          <span class="text-white font-bold">Cashback Safety Net</span> just for
+          you.
+        </p>
+      </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-6 pb-24">
+      <div class="grid lg:grid-cols-2 gap-10">
+        <section
+          class="group bg-[#1F1F1F] rounded-2xl overflow-hidden border border-[#8E213A]/30 shadow-2xl transition-all hover:border-[#8E213A]"
+        >
+          <div class="bg-[#8E213A] p-6 text-center">
+            <h2
+              class="text-2xl md:text-3xl font-black tracking-widest uppercase italic"
+            >
+              1 Leg Missed
+            </h2>
+            <p class="text-sm opacity-80 uppercase tracking-tighter">
+              Maximum Redemption
+            </p>
+          </div>
+
+          <div class="p-6 space-y-2">
+            <div
+              v-for="rule in ONE_LOST_RULES"
+              :key="rule.min"
+              class="flex justify-between items-center p-4 bg-[#2A2A2A] rounded-lg border border-transparent hover:border-[#DB7C2E]/50 transition-all"
+            >
+              <div>
+                <span class="text-xs text-gray-500 block uppercase font-bold"
+                  >Odds Range</span
+                >
+                <span class="text-lg font-mono text-gray-200">
+                  {{ rule.min
+                  }}{{ rule.max === Infinity ? "+" : " - " + rule.max }}
+                </span>
+              </div>
+              <div class="text-right">
+                <span
+                  class="text-xs text-[#DB7C2E] block uppercase font-bold text-right"
+                  >Refund</span
+                >
+                <span class="text-2xl font-black text-[#DB7C2E]"
+                  >{{ rule.percent }}%</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section
+          class="group bg-[#1F1F1F] rounded-2xl overflow-hidden border border-gray-800 shadow-2xl transition-all hover:border-[#DB7C2E]"
+        >
+          <div
+            class="bg-gradient-to-r from-[#2A2A2A] to-[#1F1F1F] p-6 text-center border-b border-gray-800"
+          >
+            <h2
+              class="text-2xl md:text-3xl font-black tracking-widest uppercase italic text-gray-200"
+            >
+              2 Legs Missed
+            </h2>
+            <p
+              class="text-sm text-[#DB7C2E] uppercase tracking-tighter font-bold"
+            >
+              Double Trouble Cover
+            </p>
+          </div>
+
+          <div class="p-6 space-y-2">
+            <div
+              v-for="rule in TWO_LOST_RULES"
+              :key="rule.min"
+              class="flex justify-between items-center p-4 bg-[#2A2A2A] rounded-lg border border-transparent hover:border-white/20 transition-all"
+            >
+              <div>
+                <span class="text-xs text-gray-500 block uppercase font-bold"
+                  >Odds Range</span
+                >
+                <span class="text-lg font-mono text-gray-200">
+                  {{ rule.min
+                  }}{{ rule.max === Infinity ? "+" : " - " + rule.max }}
+                </span>
+              </div>
+              <div class="text-right">
+                <span
+                  class="text-xs text-gray-400 block uppercase font-bold text-right"
+                  >Refund</span
+                >
+                <span class="text-2xl font-black text-white"
+                  >{{ rule.percent }}%</span
+                >
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer
+        class="mt-16 text-center p-8 bg-[#1F1F1F] rounded-xl border-t-4 border-[#8E213A]"
+      >
+        <h3 class="text-[#DB7C2E] font-bold uppercase tracking-widest mb-4">
+          Terms & Calculation
+        </h3>
+        <p class="text-sm text-gray-500 max-w-3xl mx-auto leading-relaxed">
+          Refunds are calculated based on the total ticket odds divided by the
+          odds of the losing selections. If the resulting odds fall within the
+          brackets above, your stake is multiplied by the percentage and
+          credited back. Bets must be fully settled to qualify.
+        </p>
+      </footer>
+    </main>
+  </div>
+</template>
+
+<style scoped>
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&display=swap");
+
+.font-sans {
+  font-family: "Inter", sans-serif;
+}
+</style>
