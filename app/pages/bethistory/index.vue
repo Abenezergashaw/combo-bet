@@ -143,6 +143,23 @@ function convertToEthiopianTime(utcString) {
   });
 }
 
+function convertToEthiopianTime2(utcString) {
+  const date = new Date(utcString);
+
+  // add 1 hour before formatting
+  date.setHours(date.getHours() + 1);
+
+  return date.toLocaleString("sv-SE", {
+    timeZone: "Africa/Addis_Ababa",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+  });
+}
+
 const nextPage = () => {
   if (pagination.value && pagination.value.page < pagination.value.totalPages) {
     fetchBets(pagination.value.page + 1);
@@ -286,7 +303,7 @@ onMounted(async () => {
                   <div>{{ t.event_name }}</div>
                   <div>
                     <span class="text-[10px] opacity-75">{{
-                      convertToEthiopianTime(t.start_time)
+                      convertToEthiopianTime2(t.start_time)
                     }}</span>
                   </div>
                 </div>
@@ -426,7 +443,7 @@ onMounted(async () => {
             >
               <div>
                 <div class="text-[#2A2A2A]">
-                  {{ convertToEthiopianTime(t.start_time) }}
+                  {{ convertToEthiopianTime2(t.start_time) }}
                 </div>
                 <div class="text-[#2b2b2b] opacity-75">
                   Football - {{ t.country }} - {{ t.competition }}
