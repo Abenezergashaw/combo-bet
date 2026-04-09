@@ -275,7 +275,7 @@ export function useTicket() {
         errorBets.forEach((s) => {
           const t = ticket.value.find((x) => x.reference_id === s.reference_id);
           if (t) t.errors = s.errors;
-          saveToStorage();
+          saveToStorage(ticket.value);
         });
         placingBet.value = false;
         return;
