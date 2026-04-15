@@ -71,9 +71,9 @@ export function useTicket() {
     if (normalizedBet.sportId !== 1) return;
 
     // ⬇️ ADD 1 HOUR (LOCAL) → SAVE AS UTC
-    normalizedBet.startTime = addOneHourLocalAndSaveUTC(
-      normalizedBet.startTime,
-    );
+    // normalizedBet.startTime = addOneHourLocalAndSaveUTC(
+    //   normalizedBet.startTime,
+    // );
 
     const referenceId = normalizedBet.reference_id;
 
