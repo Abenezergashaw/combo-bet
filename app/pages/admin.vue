@@ -223,6 +223,8 @@ watch(loggedIn, (newVal) => {
 });
 
 const summary = ref(null);
+const userData = ref(null);
+
 const transaction = ref(null);
 const tTotal = ref(null);
 const tPage = ref(1);
@@ -241,6 +243,8 @@ const fetchSummary = async (range) => {
 
   if (!res?.data?.error) {
     summary.value = res.data.report.result;
+    userData.value = res.data.report.childData;
+
     console.log(summary.value);
   }
 };
@@ -427,6 +431,34 @@ watch(
 
         <!-- Divider -->
         <div class="my-3 border-t border-slate-700"></div>
+
+        <div class="mt-4 space-y-0.5">
+          <p>Users Data</p>
+          <div class="text-xs flex justify-between">
+            <span class="uppercase">Total Bets</span>
+            <span class="font-semibold"
+              >ETB {{ userData?.total_bets ?? 0 }}</span
+            >
+          </div>
+          <div class="text-xs flex justify-between">
+            <span class="uppercase">Total Wins</span>
+            <span class="font-semibold"
+              >ETB {{ userData?.total_wins ?? 0 }}</span
+            >
+          </div>
+          <div class="text-xs flex justify-between">
+            <span class="uppercase">Total Bonus</span>
+            <span class="font-semibold"
+              >ETB {{ userData?.total_bonus_wins ?? 0 }}</span
+            >
+          </div>
+          <div class="text-xs flex justify-between">
+            <span class="uppercase">Total Refunds</span>
+            <span class="font-semibold"
+              >ETB {{ userData?.total_refunds ?? 0 }}</span
+            >
+          </div>
+        </div>
       </div>
     </div>
 
